@@ -1,28 +1,26 @@
 package tests;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
+import org.apache.log4j.BasicConfigurator;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
     WebDriver driver;
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
+        BasicConfigurator.configure();
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\IdeaProjects\\ITEA2\\src\\main\\resources\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://github.com/");
     }
 
-    @AfterEach
+    @AfterMethod
     void tearDown() {
         driver.quit();
     }

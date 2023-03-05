@@ -5,7 +5,7 @@ import Pages.IssuesPage;
 import Pages.LoginPage;
 import Pages.MainPage;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 public class FirstTest extends BaseTest {
 
