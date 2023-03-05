@@ -9,7 +9,6 @@ public class LoginPage extends BasePage {
     private WebElement pwField = driver.findElement(By.id("password"));
     private WebElement signIn = driver.findElement(By.xpath("//input[@type='submit']"));
 
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }

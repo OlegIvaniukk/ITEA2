@@ -1,8 +1,8 @@
 package api;
 
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -17,7 +17,7 @@ public class directoryOfSettlements extends ApiBaseTest {
     String API_key = "22a14aad6aaf4e3105af3a947c088582";
     private HashMap<String, Object> reqBody = new HashMap<>();
 
-    @BeforeEach
+    @BeforeMethod
     public void checkReqBody() {
         Map<String, Object> methodProperties = new HashMap<>();
 
@@ -48,7 +48,7 @@ public class directoryOfSettlements extends ApiBaseTest {
                 .body("success", equalTo(true));
     }
 
-    @Test
+    @org.testng.annotations.Test
     public void checkArea() {
         given()
                 .spec(requestSpecification)
